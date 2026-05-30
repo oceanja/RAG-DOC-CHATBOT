@@ -1,0 +1,46 @@
+# Fly.io deploy config.
+#
+# Before first deploy, set `app` below to a globally-unique name
+# (try `docupilot-<your-handle>`). flyctl will reject duplicate names.
+#
+# One app, two processes:
+#   • `app`    — uvicorn (HTTP-routable)
+#   • `worker` — arq job runner
+# Both run as separate 256MB machines, both pull from the same Dockerfile.
+
+app = "REPLACE-WITH-UNIQUE-NAME"
+primary_region = "sin"   # Singapore — close to Supabase + Upstash
+
+[build]
+  dockerfile = "Dockerfile"
+
+[processes]
+  app = "uvicorn app.main:app --host 0.0.0.0 --port 8000"
+  worker = "arq app.workers.ingest_worker.WorkerSettings"
+
+[deploy]
+  release_command = "alembic upgrade head"   # runs once per deploy, before any process starts
+
+[env]
+  PORT = "8000"
+  ENVIRONMENT = "production"
+  DEBUG = "false"
+  AUTO_CREATE_TABLES = "false"
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "256mb"
+  processes = ["app"]
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "256mb"
+  processes = ["worker"]
