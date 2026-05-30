@@ -1,0 +1,35 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: docupilot-postgres
+    environment:
+      POSTGRES_USER: docupilot
+      POSTGRES_PASSWORD: docupilot
+      POSTGRES_DB: docupilot
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./scripts/init-pgvector.sql:/docker-entrypoint-initdb.d/init-pgvector.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U docupilot -d docupilot"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: docupilot-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+  redis_data:
