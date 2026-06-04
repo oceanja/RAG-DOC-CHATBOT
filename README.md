@@ -3,7 +3,7 @@
 > Drop a `<script>` tag on any docs site, get an AI chatbot that answers
 > questions from your docs — with citations.
 
-**Live demo:** [rag-doc-chatbot.vercel.app](https://rag-doc-chatbot.vercel.app/) · **Backend:** [docupilot-41e2.onrender.com](https://docupilot-41e2.onrender.com/health) · **60-second walkthrough:** [docs/demo.mp4](docs/demo.mp4)
+**Live demo:** [rag-doc-chatbot.vercel.app](https://rag-doc-chatbot.vercel.app/) · **Backend:** [docupilot-41e2.onrender.com](https://docupilot-41e2.onrender.com/health) · **▶ 60-second walkthrough:** [watch on Google Drive](https://drive.google.com/file/d/1afnhjF8k1XhG_3lDAJlug01CuEErdjWC/view?usp=sharing)
 
 > Note: the backend runs on Render's free tier and sleeps after 15 min idle — the **first** load may take ~40 s to wake up. After that, requests are instant.
 
