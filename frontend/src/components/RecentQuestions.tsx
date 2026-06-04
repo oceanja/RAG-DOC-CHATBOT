@@ -83,7 +83,7 @@ export default function RecentQuestions({ projectId }: { projectId: string }) {
                           rel="noopener"
                           className="rounded-full border border-gray-300 bg-white px-2.5 py-0.5 text-xs text-gray-600 hover:bg-gray-100"
                         >
-                          <span className="font-semibold text-blue-600">
+                          <span className="font-semibold text-indigo-600">
                             [{i + 1}]
                           </span>{" "}
                           {c.title ?? "source"}
@@ -93,7 +93,7 @@ export default function RecentQuestions({ projectId }: { projectId: string }) {
                           key={c.chunk_id + i}
                           className="rounded-full border border-gray-300 bg-white px-2.5 py-0.5 text-xs text-gray-600"
                         >
-                          <span className="font-semibold text-blue-600">
+                          <span className="font-semibold text-indigo-600">
                             [{i + 1}]
                           </span>{" "}
                           {c.title ?? "source"}

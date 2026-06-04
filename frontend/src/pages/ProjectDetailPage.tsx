@@ -90,7 +90,7 @@ export default function ProjectDetailPage() {
   if (error && !project) {
     return (
       <div>
-        <Link to="/" className="text-sm text-blue-600 hover:underline">
+        <Link to="/" className="text-sm text-indigo-600 hover:underline">
           ← Back
         </Link>
         <div className="mt-4 rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">
@@ -120,7 +120,7 @@ export default function ProjectDetailPage() {
         </div>
       )}
 
-      <Link to="/" className="text-sm text-blue-600 hover:underline">
+      <Link to="/" className="text-sm text-indigo-600 hover:underline">
         ← All projects
       </Link>
 
@@ -142,7 +142,7 @@ export default function ProjectDetailPage() {
             onClick={() => setTab(t)}
             className={`-mb-px border-b-2 px-4 py-2 text-sm font-medium ${
               tab === t
-                ? "border-blue-600 text-blue-600"
+                ? "border-indigo-600 text-indigo-600"
                 : "border-transparent text-gray-500 hover:text-gray-700"
             }`}
           >
@@ -163,7 +163,7 @@ export default function ProjectDetailPage() {
                 <button
                   onClick={() => setMode("markdown")}
                   className={`rounded-md px-3 py-1.5 ${
-                    mode === "markdown" ? "bg-blue-600 text-white" : "text-gray-600"
+                    mode === "markdown" ? "bg-indigo-600 text-white" : "text-gray-600"
                   }`}
                 >
                   Markdown
@@ -171,7 +171,7 @@ export default function ProjectDetailPage() {
                 <button
                   onClick={() => setMode("url")}
                   className={`rounded-md px-3 py-1.5 ${
-                    mode === "url" ? "bg-blue-600 text-white" : "text-gray-600"
+                    mode === "url" ? "bg-indigo-600 text-white" : "text-gray-600"
                   }`}
                 >
                   URL crawl
@@ -185,7 +185,7 @@ export default function ProjectDetailPage() {
                     onChange={(e) => setMarkdown(e.target.value)}
                     placeholder="# Getting Started&#10;&#10;Paste your markdown docs here…"
                     rows={8}
-                    className="w-full rounded-lg border border-gray-300 px-3 py-2 font-mono text-xs focus:border-blue-500 focus:outline-none"
+                    className="w-full rounded-lg border border-gray-300 px-3 py-2 font-mono text-xs focus:border-indigo-500 focus:outline-none"
                   />
                 ) : (
                   <div className="space-y-3">
@@ -193,7 +193,7 @@ export default function ProjectDetailPage() {
                       value={url}
                       onChange={(e) => setUrl(e.target.value)}
                       placeholder="https://docs.example.com"
-                      className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none"
+                      className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none"
                     />
                     <label className="block text-sm text-gray-600">
                       Max pages
@@ -203,7 +203,7 @@ export default function ProjectDetailPage() {
                         max={1000}
                         value={maxPages}
                         onChange={(e) => setMaxPages(Number(e.target.value))}
-                        className="ml-2 w-24 rounded-lg border border-gray-300 px-2 py-1 text-sm focus:border-blue-500 focus:outline-none"
+                        className="ml-2 w-24 rounded-lg border border-gray-300 px-2 py-1 text-sm focus:border-indigo-500 focus:outline-none"
                       />
                     </label>
                   </div>
@@ -212,7 +212,7 @@ export default function ProjectDetailPage() {
                 <button
                   type="submit"
                   disabled={submitting || isBusy}
-                  className="mt-4 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 disabled:bg-gray-400"
+                  className="mt-4 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700 disabled:bg-gray-400"
                 >
                   {isBusy ? "Ingesting…" : submitting ? "Starting…" : "Ingest"}
                 </button>

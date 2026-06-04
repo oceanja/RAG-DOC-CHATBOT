@@ -72,7 +72,7 @@ export const CSS = `
 .msg { margin-bottom: 14px; max-width: 90%; word-wrap: break-word; }
 .msg-user { margin-left: auto; }
 .msg-user .bubble-body {
-  background: #2563eb;
+  background: #4f46e5;
   color: #fff;
   padding: 8px 12px;
   border-radius: 12px 12px 2px 12px;
@@ -95,7 +95,7 @@ export const CSS = `
   font-family: ui-monospace, Menlo, Consolas, monospace;
   font-size: 12.5px;
 }
-.msg-bot .bubble-body a { color: #2563eb; }
+.msg-bot .bubble-body a { color: #4f46e5; }
 
 .typing {
   display: inline-flex;
@@ -137,7 +137,7 @@ export const CSS = `
 .citation-num {
   display: inline-block;
   font-weight: 600;
-  color: #2563eb;
+  color: #4f46e5;
   margin-right: 4px;
 }
 
@@ -158,9 +158,9 @@ export const CSS = `
   resize: none;
   outline: none;
 }
-.input:focus { border-color: #2563eb; }
+.input:focus { border-color: #4f46e5; }
 .send {
-  background: #2563eb;
+  background: #4f46e5;
   color: #fff;
   border: none;
   border-radius: 8px;

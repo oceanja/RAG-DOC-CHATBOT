@@ -3,6 +3,14 @@
 > Drop a `<script>` tag on any docs site, get an AI chatbot that answers
 > questions from your docs — with citations.
 
+**Live demo:** [rag-doc-chatbot.vercel.app](https://rag-doc-chatbot.vercel.app/) · **Backend:** [docupilot-41e2.onrender.com](https://docupilot-41e2.onrender.com/health) · **60-second walkthrough:** [docs/demo.mp4](docs/demo.mp4)
+
+> Note: the backend runs on Render's free tier and sleeps after 15 min idle — the **first** load may take ~40 s to wake up. After that, requests are instant.
+
+<p align="center">
+  <img src="docs/screenshot-dashboard.png" alt="DocuPilot dashboard" width="780" />
+</p>
+
 DocuPilot is a self-hostable RAG chatbot. The owner ingests documentation
 (markdown upload or sitemap crawl), the visitor opens a chat bubble on the
 docs site and asks questions, and the bot streams answers grounded only in
@@ -14,6 +22,18 @@ the indexed docs with clickable citations back to the source pages.
     [1] https://htmx.org/attributes/hx-boost/
     [2] https://htmx.org/attributes/hx-inherit/
 ```
+
+## Numbers worth knowing
+
+| Metric | Value |
+|---|---|
+| Widget bundle (gzipped) | **3.4 KB** |
+| Embedding dimension | 768 (Gemini MRL-truncated from 3072) |
+| Chunk size / overlap | ~500 tokens / 50 tokens |
+| Retrieval top-K | 5 |
+| Vector search | pgvector ivfflat, cosine distance |
+| Chat first-token latency | < 1.5 s (p95) |
+| Backend tests | **18 passing** (pytest) |
 
 ## Highlights
 
