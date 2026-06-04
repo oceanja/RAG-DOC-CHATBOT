@@ -7,10 +7,6 @@
 
 > Note: the backend runs on Render's free tier and sleeps after 15 min idle — the **first** load may take ~40 s to wake up. After that, requests are instant.
 
-<p align="center">
-  <img src="docs/screenshot-dashboard.png" alt="DocuPilot dashboard" width="780" />
-</p>
-
 DocuPilot is a self-hostable RAG chatbot. The owner ingests documentation
 (markdown upload or sitemap crawl), the visitor opens a chat bubble on the
 docs site and asks questions, and the bot streams answers grounded only in
